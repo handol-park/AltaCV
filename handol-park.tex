@@ -1,0 +1,213 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.6.5, 3 Nov 2022) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.cfg}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num.cfg}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Handol Park}
+\tagline{Machine Learning Engineer}
+%% You can add multiple photos on the left or right
+% \photoR{2.8cm}{Globe_High}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{handolpark12@gmail.com}
+  \phone{+1 323-639-3121}
+  \mailaddress{34 Sedgewick}
+  \location{Irvine, CA}
+  % \homepage{www.homepage.com}
+  % \twitter{@twitterhandle}
+  \linkedin{handol}
+  \github{handol-park}
+  % \orcid{0000-0000-0000-0000}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+\cvsection{Summary}
+
+Software Engineer with over 20 years of experience and a strong background in data engineering and machine learning. Proficient in developing and deploying machine learning models and systems in production environments. Adept at evaluating and improving the performance and accuracy of machine learning models while effectively collaborating with cross-functional teams. Skilled in implementing data pipelines, infrastructure, and tools for large-scale data storage, processing, and analysis.
+
+
+\bigskip
+\cvsection{Experience}
+
+\cvevent{Software Engineer Tech Lead, Data Platform}{Sendbird}{Sep 2021 -- Feb 2023}{Remote}
+\begin{itemize}
+  \item Provided technical guidance for data warehouse migration from AWS Athena to Google BigQuery and adoption of Apache Kafka to streamline legacy log ingestion data pipelines.
+  \item Assisted Infrastructure Team in designing and implementing GCP VPCs using Shared VPC for data pipelines and data warehouse.
+  \item Developed aggregation pipeline for message response metrics and a dashboard in collaboration with BI Team, showcasing Sendbird's value addition to customers' businesses.
+  \item Explored Looker to simplify data aggregation processes, enabling data consumers to easily access and utilize data within the data warehouse.
+  \item Led weekly sync with Infrastructure Team to ensure alignment of requirements and expectations.
+\end{itemize}
+
+\divider
+
+\cvevent{Backend Software Engineer}{Bandai Namco Entertainment America}{Mar 2019 -- Sep 2021}{Remote}
+\begin{itemize}
+  \item Developed customer lifetime value prediction models (DNN, ARIMA, "Buy 'Till you Die") and API servers for ad network bidding and internal BI dashboard support.
+  \item Utilized Google Cloud Run, Google Dataflow (Apache Beam), Tensorflow and statsmodels Python package for model development.
+  \item Improved log ingestion pipeline from batch-based to real-time streaming, connecting AWS Kinesis to Google Cloud PubSub.
+\end{itemize}
+
+\divider
+
+\cvevent{Lead Software Engineer}{Nexon America}{Mar 2009 -- Feb 2018}{El Segundo, CA}
+\begin{itemize}
+  \item Implemented Puppet infrastructure for system configuration management.
+  \item Developed data warehouse using Hive, with real-time log ingestion using Kafka.
+  \item Led integration of user authentication and payment systems with Nexon Europe.
+  \item Designed REST API for Wallet system and Playfeed, a social network for Nexon gamers.
+\end{itemize}
+
+\divider
+
+\cvevent{Senior Software Engineer}{Various Companies}{Jun 2006 -- Feb 2009}{}
+\begin{itemize}
+  \item Developed user-behavior analysis systems, web log processing systems, and Interactive Voice Response (IVR) systems, integrating various technologies such as Hadoop MapReduce, AWS SQS, Erlang, and REST API.
+\end{itemize}
+
+\divider
+
+\cvevent{Manager, Client}{Nable Communications}{Sep 2003 -- May 2006}{Seoul, South Korea}
+\begin{itemize}
+  \item Led client development team, developing applications for Push-to-Talk and VoIP systems on various operating systems.
+\end{itemize}
+
+\divider
+
+\cvevent{Software Engineer \& Co-founder}{SecureWiz}{Aug 2000 -- Apr 2003}{Seoul, South Korea}
+\begin{itemize}
+  \item Developed Windows host-based firewall using a Windows NDIS Intermediate driver.
+\end{itemize}
+
+\divider
+
+\cvevent{Software Engineer}{Taewool}{Oct 1997 -- Aug 2000}{Seoul, South Korea}
+\begin{itemize}
+  \item Developed physics engine for 3D mech combat simulation engine.
+\end{itemize}
+
+
+\bigskip
+\cvsection{Activity}
+
+\cvevent{Deep Learning Study Group}{K-DEVCON}{2019}{}
+\begin{itemize}
+  \item Helped other software engineers understand Deep Learning coursework.
+  \item Deep Learning Specialization (Coursera)
+  \item Practical Deep Learning for Coders (fast.ai)
+\end{itemize}
+
+
+\bigskip
+\cvsection{Education}
+
+\cvevent{B.Sc.\ in Computer Science}{KAIST}{Mar 1993 -- Feb 2000}{}
+
+
+\bigskip
+\cvsection{Certification}
+
+\cvevent{Deep Learning Specialization}{Coursera}{Jan 2019}{}
+\cvevent{Deep Learning Nanodegree}{Udacity}{Jan 2019}{}
+\cvevent{Functional Programming Principles in Scala}{Coursera}{Oct 2016}{}
+
+\end{document}
